@@ -92,7 +92,7 @@ CREATE TABLE curriculo (
     data_de_nascimento DATE NOT NULL,
     biografia VARCHAR2(500) NOT NULL,
     
-    CONSTRAINT chk_email_valido CHECK (email LIKE '%@%'),
+    CONSTRAINT chk_email_cv_valido CHECK (email LIKE '%@%'),
     CONSTRAINT fk_curriculo_cidade FOREIGN KEY (cod_cidade) REFERENCES cidade(cod_cidade)
 );
 
@@ -118,7 +118,7 @@ CREATE TABLE vaga(
     CONSTRAINT chk_vaga_datas CHECK (data_fim >= data_postagem),
     CONSTRAINT fk_vaga_area FOREIGN KEY (cod_area) REFERENCES area(cod_area),
     CONSTRAINT fk_vaga_responsavel FOREIGN KEY (cod_responsavel) REFERENCES responsavel(cod_responsavel),
-    CONSTRAINT fk_vaga_unidade FOREIGN KEY (cod_unidade_empresa) REFERENCES unidade(cod_unidade_empresa)
+    CONSTRAINT fk_vaga_unidade FOREIGN KEY (cod_unidade_empresa) REFERENCES unidade_empresa(cod_unidade_empresa)
 );
 
 CREATE TABLE vaga_skill(
@@ -223,5 +223,12 @@ CREATE TABLE respostas(
     CONSTRAINT fk_candidatura_repostas FOREIGN KEY (cod_candidatura) REFERENCES candidatura(cod_candidatura),
     CONSTRAINT fk_perguntas_repostas FOREIGN KEY (cod_pergunta) REFERENCES perguntas(cod_pergunta)
 );
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
+CREATE USER HRCHAT3 IDENTIFIED BY "Senha123";
+
+GRANT CONNECT, RESOURCE TO HRCHAT3;
+
+-- Comando corrigido para liberar espaço:
+GRANT UNLIMITED TABLESPACE TO HRCHAT3;
 
