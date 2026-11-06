@@ -18,7 +18,9 @@ CREATE TABLE responsavel (
     cod_responsavel NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome VARCHAR2(100) NOT NULL,
     email VARCHAR2(50) NOT NULL,
-    telefone NUMBER NOT NULL
+    telefone NUMBER NOT NULL,
+    
+    CONSTRAINT chk_email_valido CHECK (email LIKE '%@%')
 );
 
 CREATE TABLE tipo_skill (
@@ -35,14 +37,15 @@ CREATE TABLE cidade (
 );
 
 CREATE TABLE unidade_empresa (
-    cod_unidade NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    cod_unidade_empresa NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     cod_empresa NUMBER NOT NULL,
     cod_cidade NUMBER NOT NULL,
     nome VARCHAR2(100) NOT NULL,
     descricao VARCHAR2(300) NOT NULL,
     email VARCHAR2(50) NOT NULL,
-    telefone NUMBER NOT NULL,
+    telefone VARCHAR2(20) NOT NULL,
     
+    CONSTRAINT chk_email_valido CHECK (email LIKE '%@%'),
     CONSTRAINT fk_unidade_empresa FOREIGN KEY (cod_empresa) REFERENCES empresa(cod_empresa),
     CONSTRAINT fk_cidade FOREIGN KEY (cod_cidade) REFERENCES cidade(cod_cidade)
 );
@@ -70,6 +73,8 @@ CREATE TABLE beneficio (
     nome VARCHAR2(100) NOT NULL,
     descricao VARCHAR2(300),
     valor NUMBER(12,2) NOT NULL
+    
+    CONSTRAINT chk_beneficio_valor CHECK (valor >= 0)
 );
 
 CREATE TABLE experiencia (
@@ -83,10 +88,11 @@ CREATE TABLE curriculo (
     cod_cidade NUMBER NOT NULL,
     nome VARCHAR2(200) NOT NULL,
     email VARCHAR2(50) NOT NULL,
-    telefone NUMBER NOT NULL,
+    telefone VARCHAR2(20) NOT NULL,
     data_de_nascimento DATE NOT NULL,
     biografia VARCHAR2(500) NOT NULL,
     
+    CONSTRAINT chk_email_valido CHECK (email LIKE '%@%'),
     CONSTRAINT fk_curriculo_cidade FOREIGN KEY (cod_cidade) REFERENCES cidade(cod_cidade)
 );
 
@@ -94,7 +100,7 @@ CREATE TABLE vaga(
     cod_vaga NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     cod_area NUMBER NOT NULL,
     cod_responsavel NUMBER NOT NULL,
-    cod_unidade NUMBER NOT NULL,
+    cod_unidade_empresa NUMBER NOT NULL,
     nome VARCHAR2(100) NOT NULL,
     descricao VARCHAR2(500) NOT NULL,
     salario NUMBER(12,2),
@@ -105,9 +111,14 @@ CREATE TABLE vaga(
     status VARCHAR2(50) NOT NULL,
     data_fim DATE NOT NULL,
     
+  
+    CONSTRAINT chk_vaga_experiencia CHECK (experiencia IN ('S', 'N')),
+    CONSTRAINT chk_vaga_salario CHECK (salario >= 0),
+    CONSTRAINT chk_vaga_indice CHECK (indice_comp_min BETWEEN 0 AND 100),
+    CONSTRAINT chk_vaga_datas CHECK (data_fim >= data_postagem),
     CONSTRAINT fk_vaga_area FOREIGN KEY (cod_area) REFERENCES area(cod_area),
     CONSTRAINT fk_vaga_responsavel FOREIGN KEY (cod_responsavel) REFERENCES responsavel(cod_responsavel),
-    CONSTRAINT fk_vaga_unidade FOREIGN KEY (cod_unidade) REFERENCES unidade(cod_unidade)
+    CONSTRAINT fk_vaga_unidade FOREIGN KEY (cod_unidade_empresa) REFERENCES unidade(cod_unidade_empresa)
 );
 
 CREATE TABLE vaga_skill(
@@ -191,7 +202,13 @@ CREATE TABLE candidatura(
     indice_compatibilidade NUMBER(5,2) NOT NULL,
     data_candidatura DATE NOT NULL,
     status VARCHAR2(100) NOT NULL,
+    instituicao_ensino VARCHAR2(50) NOT NULL,
+    data_inicio DATE NOT NULL,
+    data_fim DATE NOT NULL,
     
+    CONSTRAINT chk_experiencia CHECK (experiencia IN ('S', 'N')),
+    CONSTRAINT chk_cand_indice CHECK (indice_compatibilidade BETWEEN 0 AND 100),
+    CONSTRAINT chk_cand_datas CHECK (data_fim >= data_inicio),
     CONSTRAINT fk_candidatura_vaga FOREIGN KEY (cod_vaga) REFERENCES vaga(cod_vaga),
     CONSTRAINT fk_candidatura_cv FOREIGN KEY (cod_cv) REFERENCES curriculo(cod_cv)
 );
@@ -206,3 +223,5 @@ CREATE TABLE respostas(
     CONSTRAINT fk_candidatura_repostas FOREIGN KEY (cod_candidatura) REFERENCES candidatura(cod_candidatura),
     CONSTRAINT fk_perguntas_repostas FOREIGN KEY (cod_pergunta) REFERENCES perguntas(cod_pergunta)
 );
+
+
