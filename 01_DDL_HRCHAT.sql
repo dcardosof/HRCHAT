@@ -1,7 +1,7 @@
-CREATE TABLE estado (
-    cod_estado NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    nome VARCHAR2(50) NOT NULL
-);
+    CREATE TABLE estado (
+        cod_estado NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        nome VARCHAR2(50) NOT NULL
+    );
 
 CREATE TABLE empresa (
     cod_empresa NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -223,12 +223,4 @@ CREATE TABLE respostas(
     CONSTRAINT fk_candidatura_repostas FOREIGN KEY (cod_candidatura) REFERENCES candidatura(cod_candidatura),
     CONSTRAINT fk_perguntas_repostas FOREIGN KEY (cod_pergunta) REFERENCES perguntas(cod_pergunta)
 );
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-
-CREATE USER HRCHAT3 IDENTIFIED BY "Senha123";
-
-GRANT CONNECT, RESOURCE TO HRCHAT3;
-
--- Comando corrigido para liberar espaço:
-GRANT UNLIMITED TABLESPACE TO HRCHAT3;
 
