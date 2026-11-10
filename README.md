@@ -67,11 +67,11 @@ Os scripts utilizados na implementação estão disponíveis na pasta [`sql`](./
 
 A ordem recomendada de execução é:
 
-1. `01_DDL_HRCHAT.sql` — criação das tabelas e restrições;
-2. `02_INSERTS_HRCHAT.sql` — carga inicial de dados;
-3. `03_UPDATES_HRCHAT.sql` — exemplos de atualização;
-4. `04_DELETES_HRCHAT.sql` — exemplos de exclusão;
-5. `05_SELECTS_HRCHAT.sql` — consultas realizadas no banco.
+1. `01_DDL_CREATE_HRCHAT.sql` — criação das tabelas e restrições;
+2. `02_DML_INSERTS_HRCHAT.sql` — carga inicial de dados;
+3. `03_DML_UPDATES_HRCHAT.sql` — exemplos de atualização;
+4. `04_DML_DELETES_HRCHAT.sql` — exemplos de exclusão;
+5. `05_DQL_SELECTS_HRCHAT.sql` — consultas realizadas no banco.
 
 As consultas desenvolvidas incluem:
 
@@ -87,7 +87,9 @@ As consultas desenvolvidas incluem:
 
 ```text
 HRCHAT/
-├── README.md
+├── docs/
+│   ├── HRCHAT_Documentacao_Final.pdf
+│   └── HRCHAT_Apresentacao_Final.pdf
 ├── sql/
 │   ├── 01_DDL_HRCHAT.sql
 │   ├── 02_INSERTS_HRCHAT.sql
