@@ -1,10 +1,10 @@
 --- RESPOSTAS ---
 DELETE FROM respostas
-WHERE cod_candidatura = 20 OR cod_pergunta = 10;
+WHERE cod_candidatura = 10 OR cod_pergunta = 10;
 
 --- CANDIDATURA ---
 DELETE FROM candidatura
-WHERE cod_candidatura = 20;
+WHERE cod_candidatura = 10;
 
 --- PERGUNTAS ---
 DELETE FROM perguntas
@@ -12,7 +12,7 @@ WHERE cod_pergunta = 10;
 
 --- QUESTIONARIO ---
 DELETE FROM questionario
-WHERE cod_vaga = 27;
+WHERE cod_vaga = 7;
 
 --- VAGA_SKILL ---
 DELETE FROM vaga_skill
@@ -32,7 +32,7 @@ WHERE cod_skill IN (
 
 --- VAGA_FORMACAO ---
 DELETE FROM vaga_formacao
-WHERE cod_vaga = 25
+WHERE cod_vaga = 5
 AND cod_form_acad = 4;
 
 --- CURRICULO_FORMACAO ---
@@ -41,7 +41,7 @@ WHERE cod_cv = 10;
 
 --- VAGA_BENEFICIO ---
 DELETE FROM vaga_beneficio
-WHERE cod_vaga = 23
+WHERE cod_vaga = 3
 AND cod_beneficio = 3;
 
 --- CURRICULO_EXPERIENCIA ---
@@ -62,7 +62,7 @@ WHERE cod_cv = 10;
 
 --- VAGA ---
 DELETE FROM vaga
-WHERE cod_vaga = 27;
+WHERE cod_vaga = 7;
 
 --- UNIDADE_EMPRESA ---
 DELETE FROM unidade_empresa
