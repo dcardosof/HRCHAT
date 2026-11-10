@@ -171,60 +171,60 @@ INSERT INTO curriculo (cod_cidade, nome, email, telefone, data_de_nascimento, bi
 -- 13. TABELA VAGA
 -- =====================================================================
 INSERT INTO vaga (cod_area, cod_responsavel, cod_unidade_empresa, nome, descricao, salario, experiencia, nivel_profissional, data_postagem, indice_comp_min, status, data_fim) VALUES
-    (1, 1, 11, 'Desenvolvedor Back-end',    'Desenvolvimento e manutenção de APIs e integrações',     6500.00, 'S', 'Junior',   DATE '2026-10-01', 70.00, 'Em Seleção', DATE '2026-11-15'),
-    (1, 2, 12, 'Analista de Dados Júnior',  'Análise de dados, criação de relatórios e dashboards',   4200.00, 'N', 'Junior',   DATE '2026-10-03', 65.00, 'Em Seleção', DATE '2026-11-20'),
-    (2, 1, 11, 'Analista de Recrutamento',  'Condução de processos seletivos e triagem de candidatos',3800.00, 'S', 'PlenoAño',    DATE '2026-10-05', 60.00, 'Finalizada',   DATE '2026-11-18'),
-    (3, 3, 13, 'Assistente Administrativo', 'Apoio a rotinas administrativas e atendimento interno',  2800.00, 'N', 'Junior',   DATE '2026-10-08', 55.00, 'Finalizada',   DATE '2026-11-25'),
-    (1, 1, 11, 'Desenvolvedor Front-end',   'Criação de telas em React',                              6000.00, 'S', 'Junior',   DATE '2026-10-10', 65.00, 'Em Seleção', DATE '2026-12-01'),
-    (1, 2, 12, 'Engenheiro de Dados',       'ETL e manutenção de DW',                                 9500.00, 'S', 'Senior',   DATE '2026-10-12', 85.00, 'Em Seleção', DATE '2026-12-10'),
-    (4, 3, 13, 'Analista Financeiro',       'Controle orçamentário',                                  4500.00, 'S', 'PlenoAño',    DATE '2026-10-15', 70.00, 'Em Seleção', DATE '2026-11-30'),
-    (1, 1, 11, 'Estagiário de TI',          'Suporte a sistemas internos',                            1800.00, 'N', 'Estágio',  DATE '2026-10-20', 50.00, 'Em Seleção', DATE '2026-11-20'),
-    (2, 2, 12, 'Coordenador de RH',         'Gestão de folha e equipe',                               8000.00, 'S', 'Senior', DATE '2026-10-22', 80.00, 'Em Seleção', DATE '2026-12-05'),
-    (3, 3, 13, 'Recepcionista',             'Atendimento ao público presencial',                      2000.00, 'N', 'Junior',   DATE '2026-10-25', 45.00, 'Finalizada',   DATE '2026-11-10');
+    (1, 1, 1, 'Desenvolvedor Back-end',    'Desenvolvimento e manutenção de APIs e integrações',     6500.00, 'S', 'Júnior',   DATE '2026-10-01', 70.00, 'Em Seleção', DATE '2026-11-15'),
+    (1, 2, 2, 'Analista de Dados Júnior',  'Análise de dados, criação de relatórios e dashboards',   4200.00, 'N', 'Júnior',   DATE '2026-10-03', 65.00, 'Em Seleção', DATE '2026-11-20'),
+    (2, 1, 1, 'Analista de Recrutamento',  'Condução de processos seletivos e triagem de candidatos',3800.00, 'S', 'Pleno',    DATE '2026-10-05', 60.00, 'Finalizada',   DATE '2026-11-18'),
+    (3, 3, 3, 'Assistente Administrativo', 'Apoio a rotinas administrativas e atendimento interno',  2800.00, 'N', 'Júnior',   DATE '2026-10-08', 55.00, 'Finalizada',   DATE '2026-11-25'),
+    (1, 1, 1, 'Desenvolvedor Front-end',   'Criação de telas em React',                              6000.00, 'S', 'Júnior',   DATE '2026-10-10', 65.00, 'Em Seleção', DATE '2026-12-01'),
+    (1, 2, 2, 'Engenheiro de Dados',       'ETL e manutenção de DW',                                 9500.00, 'S', 'Sênior',   DATE '2026-10-12', 85.00, 'Em Seleção', DATE '2026-12-10'),
+    (4, 3, 3, 'Analista Financeiro',       'Controle orçamentário',                                  4500.00, 'S', 'Pleno',    DATE '2026-10-15', 70.00, 'Em Seleção', DATE '2026-11-30'),
+    (1, 1, 1, 'Estagiário de TI',          'Suporte a sistemas internos',                            1800.00, 'N', 'Estágio',  DATE '2026-10-20', 50.00, 'Em Seleção', DATE '2026-11-20'),
+    (2, 2, 2, 'Coordenador de RH',         'Gestão de folha e equipe',                               8000.00, 'S', 'Sênior', DATE '2026-10-22', 80.00, 'Em Seleção', DATE '2026-12-05'),
+    (3, 3, 3, 'Recepcionista',             'Atendimento ao público presencial',                      2000.00, 'N', 'Júnior',   DATE '2026-10-25', 45.00, 'Finalizada',   DATE '2026-11-10');
 
 -- =====================================================================
 -- 14. TABELA VAGA_SKILL
 -- =====================================================================
 INSERT INTO vaga_skill (cod_skill, cod_vaga) VALUES
-    (11, 18),
-    (12, 18),
-    (13, 18),
-    (12, 19),
-    (13, 19),
-    (20, 19),
-    (14, 20),
-    (15, 20),
-    (14, 21),
-    (15, 21);
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (2, 2),
+    (3, 2),
+    (10, 2),
+    (4, 3),
+    (5, 3),
+    (4, 4),
+    (5, 4);
 -- =====================================================================
 -- 15. TABELA CURRICULO_SKILL
 -- =====================================================================
 INSERT INTO curriculo_skill (cod_skill, cod_cv) VALUES
-    (11, 1),
-    (12, 1),
-    (13, 1),
-    (11, 2),
-    (12, 2),
-    (13, 2),
-    (12, 3),
-    (13, 3),
-    (14, 4),
-    (14, 5);
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (1, 2),
+    (2, 2),
+    (3, 2),
+    (2, 3),
+    (3, 3),
+    (4, 4),
+    (4, 5);
     
 -- =====================================================================
 -- 16. TABELA VAGA_FORMACAO (Depende de FORMACAO_ACADEMICA e VAGA)
 -- =====================================================================
 INSERT INTO vaga_formacao (cod_form_acad, cod_vaga) VALUES
-    (3, 18),
-    (4, 18),
-    (3, 19),
-    (4, 19),
-    (6, 20),
-    (5, 21),
-    (3, 22),
-    (3, 23),
-    (5, 24),
-    (4, 25);
+    (3, 1),
+    (4, 1),
+    (3, 2),
+    (4, 2),
+    (6, 3),
+    (5, 4),
+    (3, 5),
+    (3, 6),
+    (5, 7),
+    (4, 8);
 
 -- =====================================================================
 -- 17. TABELA CURRICULO_FORMACAO
@@ -245,16 +245,16 @@ INSERT INTO curriculo_formacao (cod_form_acad, cod_cv) VALUES
 -- 18. TABELA VAGA_BENEFICIO
 -- =====================================================================
 INSERT INTO vaga_beneficio (cod_beneficio, cod_vaga) VALUES
-    (1, 18),
-    (2, 18),
-    (3, 18),
-    (1, 19),
-    (2, 19),
-    (1, 20),
-    (3, 20),
-    (4, 21),
-    (1, 22),
-    (3, 23);
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (1, 2),
+    (2, 2),
+    (1, 3),
+    (3, 3),
+    (4, 4),
+    (1, 5),
+    (3, 6);
 -- =====================================================================
 -- 19. TABELA CURRICULO_EXPERIENCIA (Depende de EXPERIENCIA e CURRICULO)
 -- =====================================================================
@@ -274,59 +274,59 @@ INSERT INTO curriculo_experiencia (cod_experiencia, cod_cv) VALUES
 -- 20. TABELA QUESTIONARIO (Depende de VAGA)
 -- =====================================================================
 INSERT INTO questionario (cod_vaga, titulo) VALUES
-    (18,  'Questionário Desenvolvedor Back-end'),
-    (19,  'Questionário Analista de Dados'),
-    (20,  'Questionário Analista de Recrutamento'),
-    (21,  'Questionário Assistente Administrativo'),
-    (22,  'Questionário Dev Front'),
-    (23,  'Questionário Data Engineer'),
-    (24,  'Questionário Finanças'),
-    (25,  'Questionário Estágio TI'),
-    (26,  'Questionário Coordenador'),
-    (27, 'Questionário Recepção');
+    (1,  'Questionário Desenvolvedor Back-end'),
+    (2,  'Questionário Analista de Dados'),
+    (3,  'Questionário Analista de Recrutamento'),
+    (4,  'Questionário Assistente Administrativo'),
+    (5,  'Questionário Dev Front'),
+    (6,  'Questionário Data Engineer'),
+    (7,  'Questionário Finanças'),
+    (8,  'Questionário Estágio TI'),
+    (9,  'Questionário Coordenador'),
+    (10, 'Questionário Recepção');
 
 -- =====================================================================
 -- 21. TABELA PERGUNTAS
 -- =====================================================================
 INSERT INTO perguntas (cod_questionario, texto_pergunta, tipo_pergunta) VALUES
-    (11, 'Você possui experiência com programação back-end?', 'Múltipla Escolha'),
-    (11, 'Qual seu nível de conhecimento em SQL?',            'Discursiva'),
-    (12, 'Você possui conhecimento em SQL?',                  'Múltipla Escolha'),
-    (12, 'Você possui experiência com dashboards?',           'Múltipla Escolha'),
-    (13, 'Você possui experiência com processos seletivos?',  'Múltipla Escolha'),
-    (13, 'Como você avalia sua comunicação?',                 'Discursiva'),
-    (14, 'Você possui experiência com rotinas administrativas?', 'Discursiva'),
-    (14, 'Possui facilidade com organização de documentos?',  'Múltipla Escolha'),
-    (15, 'Conhece bibliotecas de componentes UI em React?',   'Múltipla Escolha'),
-    (16, 'Já trabalhou com Spark e Hadoop?',                  'Discursiva');
+    (1, 'Você possui experiência com programação back-end?', 'Múltipla Escolha'),
+    (1, 'Qual seu nível de conhecimento em SQL?',            'Discursiva'),
+    (2, 'Você possui conhecimento em SQL?',                  'Múltipla Escolha'),
+    (2, 'Você possui experiência com dashboards?',           'Múltipla Escolha'),
+    (3, 'Você possui experiência com processos seletivos?',  'Múltipla Escolha'),
+    (3, 'Como você avalia sua comunicação?',                 'Discursiva'),
+    (4, 'Você possui experiência com rotinas administrativas?', 'Discursiva'),
+    (4, 'Possui facilidade com organização de documentos?',  'Múltipla Escolha'),
+    (5, 'Conhece bibliotecas de componentes UI em React?',   'Múltipla Escolha'),
+    (6, 'Já trabalhou com Spark e Hadoop?',                  'Discursiva');
     
 -- =====================================================================
 -- 22. TABELA CANDIDATURA (Depende de VAGA e CURRICULO)
 -- =====================================================================
 INSERT INTO candidatura (cod_vaga, cod_cv, experiencia, indice_compatibilidade, data_candidatura, status, instituicao_ensino, data_inicio, data_fim) VALUES
-    (18, 1, 'S', 78.50, DATE '2026-10-20', 'Em análise',              'Universidade Paulista',   DATE '2022-02-01', DATE '2026-12-15'),
-    (18, 2, 'S', 91.00, DATE '2026-10-20', 'Aprovado para entrevista','Universidade Paulista',   DATE '2022-02-01', DATE '2026-12-15'),
-    (19, 1, 'N', 72.00, DATE '2026-10-20', 'Em análise',              'FATEC',                   DATE '2021-02-01', DATE '2024-12-10'),
-    (19, 3, 'S', 88.00, DATE '2026-10-20', 'Aprovado para entrevista','FATEC Campinas',          DATE '2021-02-01', DATE '2024-12-15'),
-    (20, 4, 'S', 94.00, DATE '2026-10-20', 'Aprovado para entrevista','Universidade Anhanguera', DATE '2018-02-01', DATE '2020-12-15'),
-    (20, 1, 'N', 58.00, DATE '2026-10-20', 'Em análise',              'Universidade Paulista',   DATE '2022-02-01', DATE '2026-12-15'),
-    (21, 5, 'S', 86.00, DATE '2026-10-20', 'Aprovado para entrevista','Universidade Positivo',   DATE '2020-02-01', DATE '2024-12-15'),
-    (21, 3, 'S', 69.50, DATE '2026-10-20', 'Em análise',              'FATEC',                   DATE '2021-02-01', DATE '2024-12-10'),
-    (19, 2, 'S', 80.00, DATE '2026-10-20', 'Em análise',              'FATEC Campinas',          DATE '2021-02-01', DATE '2024-12-15'),
-    (18, 3, 'N', 66.00, DATE '2026-10-20', 'Em análise',              'FATEC Campinas',          DATE '2021-02-01', DATE '2024-12-15');
+    (1, 1, 'S', 78.50, DATE '2026-10-20', 'Em análise',              'Universidade Paulista',   DATE '2022-02-01', DATE '2026-12-15'),
+    (1, 2, 'S', 91.00, DATE '2026-10-20', 'Aprovado para entrevista','Universidade Paulista',   DATE '2022-02-01', DATE '2026-12-15'),
+    (2, 1, 'N', 72.00, DATE '2026-10-20', 'Em análise',              'FATEC',                   DATE '2021-02-01', DATE '2024-12-10'),
+    (2, 3, 'S', 88.00, DATE '2026-10-20', 'Aprovado para entrevista','FATEC Campinas',          DATE '2021-02-01', DATE '2024-12-15'),
+    (3, 4, 'S', 94.00, DATE '2026-10-20', 'Aprovado para entrevista','Universidade Anhanguera', DATE '2018-02-01', DATE '2020-12-15'),
+    (3, 1, 'N', 58.00, DATE '2026-10-20', 'Em análise',              'Universidade Paulista',   DATE '2022-02-01', DATE '2026-12-15'),
+    (4, 5, 'S', 86.00, DATE '2026-10-20', 'Aprovado para entrevista','Universidade Positivo',   DATE '2020-02-01', DATE '2024-12-15'),
+    (4, 3, 'S', 69.50, DATE '2026-10-20', 'Em análise',              'FATEC',                   DATE '2021-02-01', DATE '2024-12-10'),
+    (2, 2, 'S', 80.00, DATE '2026-10-20', 'Em análise',              'FATEC Campinas',          DATE '2021-02-01', DATE '2024-12-15'),
+    (1, 3, 'N', 66.00, DATE '2026-10-20', 'Em análise',              'FATEC Campinas',          DATE '2021-02-01', DATE '2024-12-15');
     
 -- =====================================================================
 -- 23. TABELA RESPOSTAS (Depende de CANDIDATURA e PERGUNTAS)
 -- =====================================================================
 INSERT INTO respostas (cod_candidatura, cod_pergunta, texto_resposta, pontuacao) VALUES
-    (11,  3, 'Sim, em projetos acadêmicos e pessoais',    8.00),
-    (12,  3, 'Sim, trabalho com APIs em Java',           10.00),
-    (13,  5, 'Sim, no estágio',                           7.50),
-    (14,  6, 'Sim, utilizo Power BI e Tableau',           9.00),
-    (15, 7, 'Sim, experiência prévia como analista',     8.50),
-    (16,  7, 'Pouca experiência',                         6.00),
-    (17,  9, 'Sim, realizo controles semanais',           9.50),
-    (18,  10, 'Tenho perfil bem organizado',               8.00),
-    (19,  5, 'Conheço select básico',                     6.50),
-    (20, 3, 'Apenas pequenos testes em aula',            5.00);
+    (1,  3, 'Sim, em projetos acadêmicos e pessoais',    8.00),
+    (2,  3, 'Sim, trabalho com APIs em Java',           10.00),
+    (3,  5, 'Sim, no estágio',                           7.50),
+    (4,  6, 'Sim, utilizo Power BI e Tableau',           9.00),
+    (5, 7, 'Sim, experiência prévia como analista',     8.50),
+    (6,  7, 'Pouca experiência',                         6.00),
+    (7,  9, 'Sim, realizo controles semanais',           9.50),
+    (8,  10, 'Tenho perfil bem organizado',               8.00),
+    (9,  5, 'Conheço select básico',                     6.50),
+    (10, 3, 'Apenas pequenos testes em aula',            5.00);
 
