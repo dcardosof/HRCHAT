@@ -1,3 +1,5 @@
+<img width="1356" height="759" alt="image" src="https://github.com/user-attachments/assets/c30460ae-69d7-4524-971f-bce1694f1b28" />
+
 # HRCHAT — Banco de Dados para Plataforma de Recrutamento
 
 O **HRCHAT** é um projeto acadêmico de Banco de Dados desenvolvido para representar a estrutura de uma plataforma de recrutamento e seleção baseada em interação por chatbot.
