@@ -65,7 +65,6 @@ CREATE TABLE formacao_academica (
     nome VARCHAR2(300) NOT NULL,
     nivel VARCHAR2(50) NOT NULL,
     
-    CONSTRAINT chk_formacao_nivel CHECK (nivel IN ('Técnico', 'Graduação', 'Pós-Graduação', 'Mestrado', 'Doutorado')),
     CONSTRAINT fk_formacao_area FOREIGN KEY (cod_area) REFERENCES area(cod_area)
 );
 
@@ -114,12 +113,10 @@ CREATE TABLE vaga(
     status VARCHAR2(50) NOT NULL,
     data_fim DATE NOT NULL,
   
-    CONSTRAINT chk_vaga_nivel_profsher CHECK (nivel_profissional IN ('Estágio', 'Junior', 'PlenoAño', 'Senior', 'Especialista')),
     CONSTRAINT chk_vaga_experiencia CHECK (experiencia IN ('S', 'N')),
     CONSTRAINT chk_vaga_salario CHECK (salario >= 0),
     CONSTRAINT chk_vaga_indice CHECK (indice_comp_min BETWEEN 0 AND 100),
     CONSTRAINT chk_vaga_datas CHECK (data_fim >= data_postagem),
-    CONSTRAINT chk_vaga_status CHECK (status IN ('Aberta', 'Em Seleção', 'Pausada', 'Finalizada', 'Cancelada')),
     CONSTRAINT fk_vaga_area FOREIGN KEY (cod_area) REFERENCES area(cod_area),
     CONSTRAINT fk_vaga_responsavel FOREIGN KEY (cod_responsavel) REFERENCES responsavel(cod_responsavel),
     CONSTRAINT fk_vaga_unidade FOREIGN KEY (cod_unidade_empresa) REFERENCES unidade_empresa(cod_unidade_empresa)
@@ -193,7 +190,6 @@ CREATE TABLE perguntas(
     texto_pergunta VARCHAR2(1000) NOT NULL,
     tipo_pergunta VARCHAR2(50) NOT NULL,
     
-    CONSTRAINT chk_tipo_pergunta CHECK (tipo_pergunta IN ('Objetiva', 'Discursiva', 'Múltipla Escolha')),
     CONSTRAINT fk_pergunta_questionario FOREIGN KEY (cod_questionario) REFERENCES questionario(cod_questionario)
 );
 
@@ -223,7 +219,7 @@ CREATE TABLE respostas(
     pontuacao NUMBER(4,2),
     
     CONSTRAINT pk_repostas_candidatura PRIMARY KEY (cod_candidatura, cod_pergunta),
-    CONSTRAINT chk_respostas_pontuacao CHECK (pontuacao >= 0),
+    CONSTRAINT chk_respostas_pontuacao CHECK (pontuacao BETWEEN 0 AND 10),
     CONSTRAINT fk_candidatura_repostas FOREIGN KEY (cod_candidatura) REFERENCES candidatura(cod_candidatura),
     CONSTRAINT fk_perguntas_repostas FOREIGN KEY (cod_pergunta) REFERENCES perguntas(cod_pergunta)
 );
